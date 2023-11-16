@@ -1,5 +1,5 @@
 const { Op } = require("sequelize");
-const Slot = require("../model/Inventory").default;
+const Slot = require("../model/Inventory");
 
 
 exports.dates=  async(req,res)=>{

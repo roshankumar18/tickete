@@ -1,5 +1,5 @@
 const {DataTypes} = require('sequelize');
-const { sq } = require('../sequelize/config');
+const { sq } = require('../sequelize/dbConnection');
 const Slot = sq.define('slots', {
   productId: {
     type: DataTypes.INTEGER,
@@ -40,9 +40,7 @@ const Slot = sq.define('slots', {
   },
 });
 
-Slot.sync().then(()=>{
-    console.log("synced")
-}).catch((err)=>{
+Slot.sync().catch((err)=>{
     console.log(err)
 })
 module.exports =   Slot;
