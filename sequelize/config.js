@@ -1,20 +1,12 @@
- const config = {development:  {
-    host:'localhost',
-    port:5432,
-    database:'inventory',
-    dialect:'postgres',
-    username:'postgres',
-    password:'admin',
-},
-production:{
-  host:'localhost',
-  port:5432,
-  database:'inventory',
-  dialect:'postgres',
-  username:'postgres',
-  password:'admin',
-}
+ require('dotenv').config()
 
+ const config=  {
+    host:process.env.HOSTNAME,
+    port:5432,
+    database:process.env.DATABASE,
+    dialect:'postgres',
+    username:process.env.USERNAME,
+    password:process.env.PASSWORD,
 }
 
 module.exports = { config }

@@ -1,6 +1,6 @@
 const { Sequelize } = require('sequelize');
 const {config} = require('./config')
-const sequelize = new Sequelize(config.development)
+const sequelize = new Sequelize(config)
 const connection= async()=>{
     try {
         await sequelize.authenticate();
@@ -9,5 +9,5 @@ const connection= async()=>{
         console.error("Unable to connect to the database:", error);
       }
 }
-
+connection()
 module.exports = { sq: sequelize, connection };
